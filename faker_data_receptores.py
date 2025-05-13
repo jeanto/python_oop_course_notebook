@@ -32,7 +32,7 @@ def remover_acentos(texto):
     return only_ascii
 
 # Função para gerar um receptor sintético
-def generate_recipient():
+def generate_receptores():
     
     dados = {
             "nome": remover_acentos(fake.name()),
@@ -79,8 +79,8 @@ def generate_receptores_short():
     return { "dados": dados, "necessidade": necessidade }
 
 def main():
-    # Gerar 1000 receptores sintéticos
-    recipients = [generate_recipient() for _ in range(10)]
+    # Gerar x receptores sintéticos
+    recipients = [generate_receptores() for _ in range(10)]
 
     # Salvar os dados em um arquivo JSON
     with open("receptores.json", "w", encoding="utf-8") as f:
